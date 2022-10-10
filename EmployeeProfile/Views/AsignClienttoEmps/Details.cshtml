@@ -1,0 +1,145 @@
+﻿@model EmployeeProfile.Models.AsignClienttoEmp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<style>
+
+
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #EBEBEB;
+    }
+
+
+    dt {
+        /* background-color: #8d2929;*/
+        color: #333;
+    }
+
+
+    dd {
+        color: white;
+    }
+
+
+    tr:nth-child(even) {
+         background-color: #F5F6FA;
+     }
+
+
+
+    body {
+        background-color: #99bbff;
+    }
+</style>
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientBilling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientBilling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientManagerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientManagerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesignationatClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesignationatClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeDetail.Firstname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")*@
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edit" class="btn btn-success" />*@
+            <input type="button" class="btn btn-primary" value="Edit" onclick="location.href='@Url.Action("Edit", "AsignClienttoEmps", new { id = Model.ID })'" />
+            @*@Html.ActionLink("Back to List", "Index")*@
+            <input type="button" class="btn btn-primary" value="BackToList" onclick="location.href='@Url.Action("Index", "AsignClienttoEmps")'" />
+      
+</p>

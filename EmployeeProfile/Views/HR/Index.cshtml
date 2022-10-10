@@ -1,0 +1,177 @@
+﻿@model IEnumerable<EmployeeProfile.Models.EmployeeDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>DashBoard</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phoneno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Worklocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LancesoftID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pincode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active_Status)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Vertical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Working_internal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Joiningdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dateofbirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation.DesignationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_Type.EmployeeType)
+        </th>
+        <th>
+
+            <label>Reporting Person</label>
+        </th>
+        <th>
+
+            <label>Sub-Department</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phoneno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Worklocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LancesoftID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active_Status)
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Vertical)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Working_internal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Joiningdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dateofbirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_Type.EmployeeType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubDepartment.Name)
+            </td>
+            <td>
+
+                @Html.ActionLink("View", "MDDetails", new { id = item.EmpId })
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+

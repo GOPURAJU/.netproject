@@ -1,0 +1,42 @@
+﻿@model EmployeeProfile.Models.Salary
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Salary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_At)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_At)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeDetail.Firstname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Sid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

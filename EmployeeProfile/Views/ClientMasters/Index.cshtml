@@ -1,0 +1,81 @@
+﻿@model IEnumerable<EmployeeProfile.Models.ClientMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #EBEBEB;
+    }
+
+    th {
+        background-color: #152D53;
+        color: white;
+    }
+
+    td, th {
+        border: 1px solid #99b3ff;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F5F6FA;
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClientName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedBy)
+    </td>
+    @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ClientId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ClientId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ClientId })
+    </td>*@
+
+    <td>
+
+        <input type="button" class="btn btn-primary" value="Edit" onclick="location.href='@Url.Action("Edit", "ClientMasters", new { id = item.ClientId })'" />
+
+        <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("Delete", "ClientMasters", new { id = item.ClientId })'" />
+
+        <input type="button" class="btn btn-info" value="Details" onclick="location.href='@Url.Action("Details", "ClientMasters", new { id = item.ClientId })'" />
+    </td>
+</tr>
+}
+
+</table>

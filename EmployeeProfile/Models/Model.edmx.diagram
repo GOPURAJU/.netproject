@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13f1905c93f74c9a9a8766a55c632847" Name="Diagram1">
+        <EntityTypeShape EntityType="Employee_portalModel.AsignClienttoEmp" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Bill" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.ClientMaster" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Department" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Designation" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Employee_Type" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.EmployeeDetail" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Login" Width="1.5" PointX="8.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.RoleMaster" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.Salary" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.SubDepartment" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.UserRolesMapping" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_portalModel.User" Width="1.5" PointX="7.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="Employee_portalModel.FK__AsignClient__EID__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__Bill__EID__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__ClientMaste__EID__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__EmployeeD__Depar__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__EmployeeD__Emplo__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__EmployeeD__Emplo__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__EmployeeD__Repor__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__EmployeeD__SubDe__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__Salary__EID__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__UserRoles__RoleI__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_portalModel.FK__UserRoles__UserI__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

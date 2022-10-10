@@ -1,0 +1,373 @@
+﻿@model EmployeeProfile.Models.GetAllEployeedetails
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>
+    <br />
+</h2>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #EBEBEB;
+    }
+
+    th {
+        background-color: #152D53;
+        color: white;
+    }
+
+    td, th {
+        border: 1px solid #99b3ff;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F5F6FA;
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+</style>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Phoneno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Worklocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.LancesoftID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Pincode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Active_Status)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Vertical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Address_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Working_internal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Joiningdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Dateofbirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Department.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Designation.DesignationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eployeeDetails.Employee_Type.EmployeeType)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.eployeeDetails.Login.Name)*@
+            <label>Reporting Person</label>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.eployeeDetails.SubDepartment.Name)*@
+            <label>Sub-Department</label>
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Phoneno)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Worklocation)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.LancesoftID)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.State)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.City)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Pincode)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Active_Status)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Vertical)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Address_status)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Working_internal)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Joiningdate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Dateofbirth)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Designation.DesignationName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Employee_Type.EmployeeType)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.Login.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.eployeeDetails.SubDepartment.Name)
+        </td>
+        @*<td>
+                @Html.DisplayNameFor(model => model.eployeeDetails.Lead_p_l)
+            </td>*@
+
+
+    </tr>
+
+
+</table>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayName("ClientId")
+        </th>*@
+        <th>
+            @Html.DisplayName("ClientName")
+        </th>
+        <th>
+            @Html.DisplayName("POS")
+        </th>
+        <th>
+            @Html.DisplayName("POE")
+        </th>
+        <th>
+            @Html.DisplayName("ClientBilling")
+        </th>
+
+        <th>
+            @Html.DisplayName("ClientEmail")
+        </th>
+        <th>
+            @Html.DisplayName("ClientManagerName")
+        </th>
+        <th>
+            @Html.DisplayName("DesignationatClient")
+        </th>
+
+
+        <th>
+            @Html.DisplayName("Firstname")
+        </th>
+        
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.clientDetails)
+    {
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.ClientId)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.ClientName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.POS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.POE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClientBilling)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ClientEmail)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClientManagerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DesignationatClient)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EmployeeDetail.Firstname)
+    </td>
+    
+
+</tr>
+    }
+
+</table>
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayName("CubicleCost")
+        </th>
+        <th>
+            @Html.DisplayName("FoodCost")
+        </th>
+        <th>
+            @Html.DisplayName("TransportationCost")
+        </th>
+        <th>
+            @Html.DisplayName("bench_expenes")
+        </th>
+        <th>
+            @Html.DisplayName("TotalSalaryTillNow")
+        </th>
+
+        <th>
+            @Html.DisplayName("Tenure")
+        </th>
+        <th>
+            @Html.DisplayName("BenchTenure")
+        </th>
+        <th>
+            @Html.DisplayName("ProfitOrLoss")
+        </th>
+        @*<th>
+            @Html.DisplayName("CTenure")
+        </th>*@
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model.billDetails)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(model => item.CubicleCost)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.FoodCost)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.TransportationCost)
+    </td>
+
+    <td>
+        @Html.DisplayFor(model => item.bench_expenes)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.TotalSalaryTillNow)
+    </td>
+
+    <td>
+        @ViewBag.tenure M
+        @ViewBag.days D
+        @*@Html.DisplayFor(model => item.Tenure)*@
+    </td>
+    <td>
+        @ViewBag.btenure M
+        @ViewBag.benchdays D
+        @*@Html.DisplayFor(model => item.BenchTenure)*@
+    </td>
+    <td>
+        @if (item.ProfitOrLoss < 0)
+        {
+
+
+
+            <div style="color: Red;  width: 10%;text-align:center;">
+
+                <b> @Html.DisplayFor(model => item.ProfitOrLoss)</b>
+
+
+
+            </div>
+        }
+        else
+        {
+            <div style="color: lightseagreen;  width: 10%;text-align:center;">
+                <b>@Html.DisplayFor(model => item.ProfitOrLoss)</b>
+            </div>
+        }
+        @*@Html.DisplayFor(model => item.ProfitOrLoss)*@
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.CTenure)
+        </td>*@
+</tr>
+    }
+
+</table>

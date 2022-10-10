@@ -1,0 +1,330 @@
+﻿@model IEnumerable<EmployeeProfile.Models.GetAllEployeedetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Display("Firstname")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phoneno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worklocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LancesoftID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vertical)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Working_internal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Joiningdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dateofbirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation.DesignationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_Type.EmployeeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubDepartment.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phoneno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Worklocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LancesoftID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pincode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active_Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vertical)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address_status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Working_internal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Joiningdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dateofbirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Type.EmployeeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubDepartment.Name)
+                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CubicleCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FoodCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfitOrLoss)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalExpenses)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalSalaryTillNow)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransportationCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+                </th>
+                <th></th>
+            </tr>
+        }
+            </table>
+        
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BenchTenure)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CubicleCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FoodCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfitOrLoss)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalExpenses)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalSalaryTillNow)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransportationCost)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.POS)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.POE)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientBilling)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientEmail)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientManagerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DesignationatClient)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+                    </th>
+                    <th></th>
+                </tr>
+            }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClientName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.POS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.POE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClientBilling)
+                        </td>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClientEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClientManagerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DesignationatClient)
+                        </td>
+                        <td>
+                            @if (User.IsInRole("HR,LEAD,Manager"))
+                            {
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+
+
+                            }
+                            @Html.ActionLink("Edit", "Edit", new { id = item.EmpId })
+                            @Html.ActionLink("Details", "Details", new { id = item.EmpId })
+                            @Html.ActionLink("Details", "Details", new { id = item.EmpId })
+
+                        </td>
+}
+
+
+
+                        @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.EmpId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.EmpId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+                        </td>*@
+                    </tr>
+                }
+
+            </table>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

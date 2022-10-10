@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EmployeeProfile.Models.Salary>
+
+@{
+    ViewBag.Title = "Salary";
+}
+
+<h2>Salary</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Update_At)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Update_At)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeDetail.Firstname)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Sid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Sid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Sid })
+        </td>*@
+    </tr>
+}
+
+</table>

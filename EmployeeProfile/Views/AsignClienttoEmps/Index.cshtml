@@ -1,0 +1,133 @@
+﻿@model IEnumerable<EmployeeProfile.Models.AsignClienttoEmp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    
+    <br />
+</h2>
+
+<p>
+   
+</p>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #EBEBEB;
+    }
+
+    th {
+        background-color: #152D53;
+        color: white;
+    }
+
+    td, th {
+        border: 1px solid #99b3ff;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F5F6FA;
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+</style>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientBilling)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ClientEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientManagerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationatClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ClientId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientBilling)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientManagerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationatClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeDetail.Firstname)
+        </td>
+        <td>
+
+
+            <input type="button" class="btn btn-primary" value="Edit" onclick="location.href='@Url.Action("Edit", "AsignClienttoEmps", new { id = item.ID })'" />
+
+            @*<input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("Delete", "EmployeeDetails", new { id = item.EmpId })'" />*@
+
+
+
+            <input type="button" class="btn btn-info" value="Details" onclick="location.href='@Url.Action("Details", "AsignClienttoEmps", new { id = item.ID })'" />
+            @*<input type="button" class="btn btn-info" value="BackList" onclick="location.href='@Url.Action("Index", "Manager", new { id = item.ID })'" />*@
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+        </td>
+    </tr>
+}
+
+</table>

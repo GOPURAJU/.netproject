@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <img src="~/Images/Lancesoft White Logo png (1).svg" />
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Home", "Index", "LeadDashboard", new { area = "" }, new { @class = "navbar-brand" })*@
+
+            </div>
+            <style>
+                .navbar-inverse {
+                    background-color: #152D53;
+                    
+                }
+                    .navbar-inverse .navbar-collapse {
+                        
+                        float: right;
+                    }
+                image{
+                    float:left;
+                display:inline-block;
+                left:0px;
+                    }
+                #btn{
+                    float:left;
+                    top:5px;
+                }
+
+            </style>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        if (User.IsInRole("Manager"))
+                        {
+
+                            <li> <button type="button" class="btn btn-default">@Html.ActionLink("ADDClient", "Create", "AsignClienttoEmps")</button></li>
+
+                        }
+
+                        else if (User.IsInRole("HR"))
+                        {
+
+                            <li> <button type="button" class="btn btn-default">@Html.ActionLink("AddEmployee ", "Create", "EmployeeDetails")</button></li>
+                            <li> <button type="button" class="btn btn-default">@Html.ActionLink("ADDBill", "Create", "Bills")</button></li>
+                            <li> <button type="button" class="btn btn-default">@Html.ActionLink("HikeSalary", "Create", "salaries")</button></li>
+                        }
+
+
+                        <li> <button type="button" class="btn btn-default" id="btn">@Html.ActionLink("Logout", "Logout", "Accounts")</button></li>
+                        <!--<li><a id="btn">Hello - @User.Identity.Name-->@*,@ViewBag.profit_Loss*@<!--</a></li>-->
+
+
+                    }
+                    else
+                    {
+                        @*<li> <button type="button" class="btn btn-default">@Html.ActionLink("Login", "Login", "Accounts")</button></li>*@
+
+                    }
+                </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+
+
+        </div>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
+</html>

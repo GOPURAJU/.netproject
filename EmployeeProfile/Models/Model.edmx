@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Employee_portalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AsignClienttoEmp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EID" Type="int" />
+          <Property Name="POS" Type="date" />
+          <Property Name="POE" Type="date" />
+          <Property Name="ClientBilling" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientManagerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DesignationatClient" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Billid" />
+          </Key>
+          <Property Name="Billid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BenchTenure" Type="int" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CubicleCost" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FoodCost" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ProfitOrLoss" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TotalExpenses" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSalaryTillNow" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TransportationCost" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EID" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="ClientMaster">
+          <Key>
+            <PropertyRef Name="ClientId" />
+          </Key>
+          <Property Name="ClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="EID" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DesignationName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee_Type">
+          <Key>
+            <PropertyRef Name="EmployeeTypeid" />
+          </Key>
+          <Property Name="EmployeeTypeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phoneno" Type="bigint" />
+          <Property Name="Worklocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Employee_Designation_FK" Type="int" />
+          <Property Name="DepartmentId" Type="int" />
+          <Property Name="SubDepartmentId" Type="int" />
+          <Property Name="LancesoftID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeTypeId" Type="int" />
+          <Property Name="ReportingManagerId" Type="int" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pincode" Type="int" />
+          <Property Name="Active_Status" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vertical" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Working_internal" Type="bit" />
+          <Property Name="Joiningdate" Type="datetime" />
+          <Property Name="Dateofbirth" Type="datetime" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Empid" Type="int" />
+          <Property Name="Mobileno" Type="bigint" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active_Status" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LancesoftID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RollName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="Sid" />
+          </Key>
+          <Property Name="Sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Update_At" Type="datetime" />
+          <Property Name="EID" Type="int" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SubDepartment">
+          <Key>
+            <PropertyRef Name="SDepartmentId" />
+          </Key>
+          <Property Name="SDepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserRolesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__AsignClient__EID__5629CD9C">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="AsignClienttoEmp" Type="Self.AsignClienttoEmp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="AsignClienttoEmp">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__EID__571DF1D5">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ClientMaste__EID__5812160E">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="ClientMaster">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Depar__6A30C649">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Depar__70DDC3D8">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Emplo__6B24EA82">
+          <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_Type">
+              <PropertyRef Name="EmployeeTypeid" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmployeeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Repor__08B54D69">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="ReportingManagerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__SubDe__3A81B327">
+          <End Role="SubDepartment" Type="Self.SubDepartment" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubDepartment">
+              <PropertyRef Name="SDepartmentId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="SubDepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Salary__EID__5CD6CB2B">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__RoleI__6EF57B66">
+          <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__UserI__6FE99F9F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Employee_portalModelStoreContainer">
+          <EntitySet Name="AsignClienttoEmp" EntityType="Self.AsignClienttoEmp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientMaster" EntityType="Self.ClientMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubDepartment" EntityType="Self.SubDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRolesMapping" EntityType="Self.UserRolesMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AsignClient__EID__5629CD9C" Association="Self.FK__AsignClient__EID__5629CD9C">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="AsignClienttoEmp" EntitySet="AsignClienttoEmp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__EID__571DF1D5" Association="Self.FK__Bill__EID__571DF1D5">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ClientMaste__EID__5812160E" Association="Self.FK__ClientMaste__EID__5812160E">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="ClientMaster" EntitySet="ClientMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Depar__6A30C649" Association="Self.FK__EmployeeD__Depar__6A30C649">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Depar__70DDC3D8" Association="Self.FK__EmployeeD__Depar__70DDC3D8">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Emplo__6B24EA82" Association="Self.FK__EmployeeD__Emplo__6B24EA82">
+            <End Role="Employee_Type" EntitySet="Employee_Type" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Repor__08B54D69" Association="Self.FK__EmployeeD__Repor__08B54D69">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__SubDe__3A81B327" Association="Self.FK__EmployeeD__SubDe__3A81B327">
+            <End Role="SubDepartment" EntitySet="SubDepartment" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Salary__EID__5CD6CB2B" Association="Self.FK__Salary__EID__5CD6CB2B">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__RoleI__6EF57B66" Association="Self.FK__UserRoles__RoleI__6EF57B66">
+            <End Role="RoleMaster" EntitySet="RoleMaster" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__UserI__6FE99F9F" Association="Self.FK__UserRoles__UserI__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Employee_portalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AsignClienttoEmp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EID" Type="Int32" />
+          <Property Name="POS" Type="DateTime" Precision="0" />
+          <Property Name="POE" Type="DateTime" Precision="0" />
+          <Property Name="ClientBilling" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientManagerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DesignationatClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetail" Relationship="Self.FK__AsignClient__EID__60A75C0F" FromRole="AsignClienttoEmp" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Billid" />
+          </Key>
+          <Property Name="Billid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BenchTenure" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CubicleCost" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FoodCost" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ProfitOrLoss" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalExpenses" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSalaryTillNow" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TransportationCost" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="EmployeeDetail" Relationship="Self.FK__Bill__EID__619B8048" FromRole="Bill" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="ClientMaster">
+          <Key>
+            <PropertyRef Name="ClientId" />
+          </Key>
+          <Property Name="ClientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EID" Type="Int32" />
+          <NavigationProperty Name="EmployeeDetail" Relationship="Self.FK__ClientMaste__EID__628FA481" FromRole="ClientMaster" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK__EmployeeD__Depar__05D8E0BE" FromRole="Department" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DesignationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK__EmployeeD__Emplo__06CD04F7" FromRole="Designation" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="Employee_Type">
+          <Key>
+            <PropertyRef Name="EmployeeTypeid" />
+          </Key>
+          <Property Name="EmployeeTypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK__EmployeeD__Emplo__07C12930" FromRole="Employee_Type" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="EmployeeDetail">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phoneno" Type="Int64" />
+          <Property Name="Worklocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Employee_Designation_FK" Type="Int32" />
+          <Property Name="DepartmentId" Type="Int32" />
+          <Property Name="SubDepartmentId" Type="Int32" />
+          <Property Name="LancesoftID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeTypeId" Type="Int32" />
+          <Property Name="ReportingManagerId" Type="Int32" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="Int32" />
+          <Property Name="Active_Status" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vertical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Working_internal" Type="Boolean" />
+          <Property Name="Joiningdate" Type="DateTime" Precision="3" />
+          <Property Name="Dateofbirth" Type="DateTime" Precision="3" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="AsignClienttoEmps" Relationship="Self.FK__AsignClient__EID__60A75C0F" FromRole="EmployeeDetails" ToRole="AsignClienttoEmp" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__EID__619B8048" FromRole="EmployeeDetails" ToRole="Bill" />
+          <NavigationProperty Name="ClientMasters" Relationship="Self.FK__ClientMaste__EID__628FA481" FromRole="EmployeeDetails" ToRole="ClientMaster" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__EmployeeD__Depar__05D8E0BE" FromRole="EmployeeDetails" ToRole="Department" />
+          <NavigationProperty Name="Designation" Relationship="Self.FK__EmployeeD__Emplo__06CD04F7" FromRole="EmployeeDetails" ToRole="Designation" />
+          <NavigationProperty Name="Employee_Type" Relationship="Self.FK__EmployeeD__Emplo__07C12930" FromRole="EmployeeDetails" ToRole="Employee_Type" />
+          <NavigationProperty Name="Login" Relationship="Self.FK__EmployeeD__Repor__08B54D69" FromRole="EmployeeDetails" ToRole="Login" />
+          <NavigationProperty Name="SubDepartment" Relationship="Self.FK__EmployeeD__SubDe__3A81B327" FromRole="EmployeeDetails" ToRole="SubDepartment" />
+          <NavigationProperty Name="Salaries" Relationship="Self.FK__Salary__EID__656C112C" FromRole="EmployeeDetails" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Empid" Type="Int32" />
+          <Property Name="Mobileno" Type="Int64" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active_Status" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK__EmployeeD__Repor__08B54D69" FromRole="Login" ToRole="EmployeeDetails" />
+          <Property Name="LancesoftID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RollName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRolesMappings" Relationship="Self.FK__UserRoles__RoleI__66603565" FromRole="RoleMaster" ToRole="UserRolesMapping" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="Sid" />
+          </Key>
+          <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Salary1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Update_At" Type="DateTime" Precision="3" />
+          <Property Name="EID" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetail" Relationship="Self.FK__Salary__EID__656C112C" FromRole="Salary" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="SubDepartment">
+          <Key>
+            <PropertyRef Name="SDepartmentId" />
+          </Key>
+          <Property Name="SDepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK__EmployeeD__SubDe__3A81B327" FromRole="SubDepartment" ToRole="EmployeeDetails" />
+        </EntityType>
+        <EntityType Name="UserRolesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RoleMaster" Relationship="Self.FK__UserRoles__RoleI__66603565" FromRole="UserRolesMapping" ToRole="RoleMaster" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserRoles__UserI__398D8EEE" FromRole="UserRolesMapping" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRolesMappings" Relationship="Self.FK__UserRoles__UserI__398D8EEE" FromRole="Users" ToRole="UserRolesMapping" />
+        </EntityType>
+        <Association Name="FK__AsignClient__EID__60A75C0F">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="0..1" />
+          <End Role="AsignClienttoEmp" Type="Self.AsignClienttoEmp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="AsignClienttoEmp">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__EID__619B8048">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ClientMaste__EID__628FA481">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="0..1" />
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="ClientMaster">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Depar__05D8E0BE">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Emplo__06CD04F7">
+          <End Role="Designation" Type="Self.Designation" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designation">
+              <PropertyRef Name="DesignationId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Employee_Designation_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Emplo__07C12930">
+          <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_Type">
+              <PropertyRef Name="EmployeeTypeid" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmployeeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__Repor__08B54D69">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="ReportingManagerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeD__SubDe__3A81B327">
+          <End Role="SubDepartment" Type="Self.SubDepartment" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubDepartment">
+              <PropertyRef Name="SDepartmentId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="SubDepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Salary__EID__656C112C">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetail" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="EID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__RoleI__66603565">
+          <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__UserI__398D8EEE">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Employee_portalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AsignClienttoEmps" EntityType="Self.AsignClienttoEmp" />
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="ClientMasters" EntityType="Self.ClientMaster" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Designations" EntityType="Self.Designation" />
+          <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetail" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="RoleMasters" EntityType="Self.RoleMaster" />
+          <EntitySet Name="Salaries" EntityType="Self.Salary" />
+          <EntitySet Name="SubDepartments" EntityType="Self.SubDepartment" />
+          <EntitySet Name="UserRolesMappings" EntityType="Self.UserRolesMapping" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__AsignClient__EID__60A75C0F" Association="Self.FK__AsignClient__EID__60A75C0F">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="AsignClienttoEmp" EntitySet="AsignClienttoEmps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__EID__619B8048" Association="Self.FK__Bill__EID__619B8048">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ClientMaste__EID__628FA481" Association="Self.FK__ClientMaste__EID__628FA481">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="ClientMaster" EntitySet="ClientMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Depar__05D8E0BE" Association="Self.FK__EmployeeD__Depar__05D8E0BE">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Emplo__06CD04F7" Association="Self.FK__EmployeeD__Emplo__06CD04F7">
+            <End Role="Designation" EntitySet="Designations" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Emplo__07C12930" Association="Self.FK__EmployeeD__Emplo__07C12930">
+            <End Role="Employee_Type" EntitySet="Employee_Type" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__Repor__08B54D69" Association="Self.FK__EmployeeD__Repor__08B54D69">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeD__SubDe__3A81B327" Association="Self.FK__EmployeeD__SubDe__3A81B327">
+            <End Role="SubDepartment" EntitySet="SubDepartments" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Salary__EID__656C112C" Association="Self.FK__Salary__EID__656C112C">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Salary" EntitySet="Salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__RoleI__66603565" Association="Self.FK__UserRoles__RoleI__66603565">
+            <End Role="RoleMaster" EntitySet="RoleMasters" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__UserI__398D8EEE" Association="Self.FK__UserRoles__UserI__398D8EEE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMappings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Employee_portalModelStoreContainer" CdmEntityContainer="Employee_portalEntities">
+          <EntitySetMapping Name="AsignClienttoEmps">
+            <EntityTypeMapping TypeName="Employee_portalModel.AsignClienttoEmp">
+              <MappingFragment StoreEntitySet="AsignClienttoEmp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="POS" ColumnName="POS" />
+                <ScalarProperty Name="POE" ColumnName="POE" />
+                <ScalarProperty Name="ClientBilling" ColumnName="ClientBilling" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+                <ScalarProperty Name="ClientManagerName" ColumnName="ClientManagerName" />
+                <ScalarProperty Name="DesignationatClient" ColumnName="DesignationatClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="Employee_portalModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="Billid" ColumnName="Billid" />
+                <ScalarProperty Name="BenchTenure" ColumnName="BenchTenure" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CubicleCost" ColumnName="CubicleCost" />
+                <ScalarProperty Name="FoodCost" ColumnName="FoodCost" />
+                <ScalarProperty Name="ProfitOrLoss" ColumnName="ProfitOrLoss" />
+                <ScalarProperty Name="TotalExpenses" ColumnName="TotalExpenses" />
+                <ScalarProperty Name="TotalSalaryTillNow" ColumnName="TotalSalaryTillNow" />
+                <ScalarProperty Name="TransportationCost" ColumnName="TransportationCost" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientMasters">
+            <EntityTypeMapping TypeName="Employee_portalModel.ClientMaster">
+              <MappingFragment StoreEntitySet="ClientMaster">
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="Employee_portalModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designations">
+            <EntityTypeMapping TypeName="Employee_portalModel.Designation">
+              <MappingFragment StoreEntitySet="Designation">
+                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+                <ScalarProperty Name="DesignationName" ColumnName="DesignationName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Type">
+            <EntityTypeMapping TypeName="Employee_portalModel.Employee_Type">
+              <MappingFragment StoreEntitySet="Employee_Type">
+                <ScalarProperty Name="EmployeeTypeid" ColumnName="EmployeeTypeid" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeDetails">
+            <EntityTypeMapping TypeName="Employee_portalModel.EmployeeDetail">
+              <MappingFragment StoreEntitySet="EmployeeDetails">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phoneno" ColumnName="Phoneno" />
+                <ScalarProperty Name="Worklocation" ColumnName="Worklocation" />
+                <ScalarProperty Name="Employee_Designation_FK" ColumnName="Employee_Designation_FK" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="SubDepartmentId" ColumnName="SubDepartmentId" />
+                <ScalarProperty Name="LancesoftID" ColumnName="LancesoftID" />
+                <ScalarProperty Name="EmployeeTypeId" ColumnName="EmployeeTypeId" />
+                <ScalarProperty Name="ReportingManagerId" ColumnName="ReportingManagerId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Active_Status" ColumnName="Active_Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Vertical" ColumnName="Vertical" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address_status" ColumnName="Address_status" />
+                <ScalarProperty Name="Working_internal" ColumnName="Working_internal" />
+                <ScalarProperty Name="Joiningdate" ColumnName="Joiningdate" />
+                <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="Employee_portalModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="LancesoftID" ColumnName="LancesoftID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Empid" ColumnName="Empid" />
+                <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active_Status" ColumnName="Active_Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleMasters">
+            <EntityTypeMapping TypeName="Employee_portalModel.RoleMaster">
+              <MappingFragment StoreEntitySet="RoleMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RollName" ColumnName="RollName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="Employee_portalModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="Salary1" ColumnName="Salary" />
+                <ScalarProperty Name="Update_At" ColumnName="Update_At" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubDepartments">
+            <EntityTypeMapping TypeName="Employee_portalModel.SubDepartment">
+              <MappingFragment StoreEntitySet="SubDepartment">
+                <ScalarProperty Name="SDepartmentId" ColumnName="SDepartmentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRolesMappings">
+            <EntityTypeMapping TypeName="Employee_portalModel.UserRolesMapping">
+              <MappingFragment StoreEntitySet="UserRolesMapping">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Employee_portalModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

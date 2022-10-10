@@ -1,0 +1,139 @@
+﻿@model IEnumerable<EmployeeProfile.Models.Bill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #EBEBEB;
+    }
+
+    th {
+        background-color: #152D53;
+        color: white;
+    }
+
+    td, th {
+        border: 1px solid #99b3ff;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F5F6FA;
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+</style>
+
+
+    @*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+    <table class="table">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.BenchTenure)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CubicleCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodCost)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ProfitOrLoss)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.TotalExpenses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSalaryTillNow)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.TransportationCost)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeDetail.Firstname)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.BenchTenure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.CubicleCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodCost)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ProfitOrLoss)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalExpenses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSalaryTillNow)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.TransportationCost)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeDetail.Firstname)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Billid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Billid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Billid })
+        </td>*@
+
+        <td>
+            @if (User.IsInRole("HR"))
+            {
+
+                <input type="button" class="btn btn-primary" value="Edit" onclick="location.href='@Url.Action("Edit", "Bills", new { id = item.Billid })'" />
+
+                @*<input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("Delete", "Bills", new { id = item.Billid })'" />*@
+            }
+
+
+            <input type="button" class="btn btn-info" value="Details" onclick="location.href='@Url.Action("Details", "Bills", new { id = item.Billid })'" />
+        </td>
+    </tr>
+        }
+
+    </table>
+    <p>
+        <input type="button" class="btn btn-danger" value="Back" onclick="location.href='@Url.Action("Index", "EmployeeDetails")'" />
+
+    </p>
